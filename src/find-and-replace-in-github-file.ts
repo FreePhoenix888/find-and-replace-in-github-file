@@ -47,7 +47,7 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
   await octokit.repos.createOrUpdateFileContents({
     owner,
     repo,
-    path: fileResponse.data.path,
+    path,
     message: commitMessage,
     content: Buffer.from(changedContent).toString('base64'),
     sha: fileResponse.data.sha,
