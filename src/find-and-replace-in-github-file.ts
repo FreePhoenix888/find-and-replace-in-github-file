@@ -44,7 +44,7 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
   const changedContent = content.replace(regex, replacement);
   log({changedContent});
 
-  await octokit.repos.createOrUpdateFileContents({
+  const result = await octokit.repos.createOrUpdateFileContents({
     owner,
     repo,
     path,
@@ -52,6 +52,7 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
     content: Buffer.from(changedContent).toString('base64'),
     sha: fileResponse.data.sha,
   });
+  log({result})
 
   log(`Updated file in repo ${repo}: ${fileResponse.data.path}`);
 };
