@@ -6,6 +6,23 @@ Find and replace text in github file
 **[Documentation](https://freephoenix888.github.io/find-and-replace-in-github-file/)**
 # Quick Start
 - [Find and replace text in a file hosted on a GitHub repository](https://freephoenix888.github.io/find-and-replace-in-github-file/functions/findAndReplaceInGithubFile.html#md:find-and-replace-text-in-a-file-hosted-on-a-github-repository)
+# Demo
+- Clone this repository
+```
+git clone https://github.com/FreePhoenix888/find-and-replace-in-github-file.git
+```
+- Install dependencies
+```
+npm install
+```
+- Set environment variables by creating `.env.demo.local` by copying `env.demo` which contains "template" of environment variables
+- Change values in demo/demo.ts
+- Run demo
+```
+npx ts-node demo/demo.ts
+```
+
+
 
 # CLI
 ## Usage
