@@ -4,8 +4,8 @@ main();
 
 async function main() {
   await generateDocumentation({
-    generateCliAppsHelpInReadmeOptions: null,
-    generateUsageWaysOfNpmCliAppsInMarkdownFormatOptions: null,
+    generateCliAppsHelpInReadmeOptions: undefined,
+    generateUsageWaysOfNpmCliAppsInMarkdownFormatOptions: undefined,
     generateTableOfContentsForMarkdownOptions: null,
   });
 }
