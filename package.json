@@ -1,9 +1,10 @@
 {
   "name": "@freephoenix888/find-and-replace-in-github-file",
-  "version": "1.0.0",
+  "version": "1.0.0-dev.0",
   "description": "",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/find-and-replace-in-github-file.js",
+  "types": "dist/find-and-replace-in-github-file.d.ts",
+  "bin": "dist/cli/find-and-replace-in-github-file.js",
   "files": [
     "/dist"
   ],
@@ -21,7 +22,28 @@
     "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts",
     "library:documentation:generate": "typedoc ./src/main.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "GitHub",
+    "find-and-replace",
+    "file-manipulation",
+    "text-search",
+    "code-refactor",
+    "repository",
+    "automation",
+    "script",
+    "devops",
+    "version-control",
+    "text-processing",
+    "regex",
+    "string-replace",
+    "source-code",
+    "code-editing",
+    "cli-tool",
+    "nodejs",
+    "utility",
+    "developer-tools",
+    "git"
+  ],
   "license": "UNLICENSED",
   "devDependencies": {
     "@deep-foundation/npm-automation": "^18.1.4",
@@ -31,6 +53,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@octokit/rest": "^20.0.1"
+    "@octokit/rest": "^20.0.1",
+    "yarn": "^1.22.19"
   }
 }
