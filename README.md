@@ -4,6 +4,8 @@ Find and replace text in github file
 
 # Library
 **[Documentation](https://freephoenix888.github.io/find-and-replace-in-github-file/)**
+# Quick Start
+- [Find and replace text in a file hosted on a GitHub repository](https://freephoenix888.github.io/find-and-replace-in-github-file/functions/findAndReplaceInGithubFile.html#md:find-and-replace-text-in-a-file-hosted-on-a-github-repository)
 
 # CLI
 ## Usage
