@@ -3,6 +3,25 @@ import debug from 'debug';
 
 const log = debug('find-and-replace-in-github-file');
 
+/**
+ * Finds and replaces text in a file hosted on a GitHub repository.
+ *
+ * @example
+ * ```typescript
+ * const octokit = new Octokit({ auth: "your-github-token" });
+ * findAndReplaceInGithubFile({
+ *   octokit,
+ *   owner: "username",
+ *   repo: "repository",
+ *   path: "path/to/file.txt",
+ *   regex: /findMe/g,
+ *   replacement: "replaceWithMe",
+ *   commitMessage: "Replaced 'findMe' with 'replaceWithMe'"
+ * });
+ * ```
+ *
+ * @throws Will throw an error if any GitHub API request fails (except for 404 errors, which only log a warning).
+ */
 export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithubFileOptions) {
   const { octokit, owner, repo, path, regex, replacement, commitMessage } = options;
   
@@ -45,11 +64,38 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
 };
 
 export interface FindAndReplaceInGithubFileOptions {
+  /**
+   * An instance of the Octokit client.
+   */
   octokit: Octokit;
+
+  /**
+   * GitHub username or organization that owns the repository.
+   */
   owner: string;
+
+  /**
+   * The name of the GitHub repository.
+   */
   repo: string;
+
+  /**
+   * The file path in the repository to find and replace text in.
+   */
   path: string;
+
+  /**
+   * The regular expression used to find the text to be replaced.
+   */
   regex: RegExp;
+
+  /**
+   * The text that will replace the text found using the `regex`.
+   */
   replacement: string;
+
+  /**
+   * The commit message for the changes.
+   */
   commitMessage: string;
 }
