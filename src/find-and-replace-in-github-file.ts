@@ -28,7 +28,7 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
   
   const fileResponse = await octokit.repos.getContent({ owner, repo, path })
 
-  log('FileResponse:', fileResponse);
+  log({fileResponse});
 
   if (fileResponse && Array.isArray(fileResponse.data)) {
     throw new Error(`File ${path} appears to be a directory`);
@@ -39,17 +39,17 @@ export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithub
   }
 
   let content = Buffer.from(fileResponse.data.content, 'base64').toString('utf-8');
-  log('Original Content:', content);
+  log({content});
 
-  content = content.replace(regex, replacement);
-  log('Updated Content:', content);
+  const changedContent = content.replace(regex, replacement);
+  log({changedContent});
 
   await octokit.repos.createOrUpdateFileContents({
     owner,
     repo,
     path: fileResponse.data.path,
     message: commitMessage,
-    content: Buffer.from(content).toString('base64'),
+    content: Buffer.from(changedContent).toString('base64'),
     sha: fileResponse.data.sha,
   });
 
