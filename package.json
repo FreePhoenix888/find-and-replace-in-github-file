@@ -18,6 +18,7 @@
     "library:build:dirty": "ts-node --esm ./automation/library/build.ts",
     "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts"
   },
+  "type": "module",
   "keywords": [
     "GitHub",
     "find-and-replace",
