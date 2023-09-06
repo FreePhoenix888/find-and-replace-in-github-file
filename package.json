@@ -1,7 +1,7 @@
 {
   "name": "@freephoenix888/find-and-replace-in-github-file",
   "version": "1.0.0-dev.0",
-  "description": "",
+  "description": "Find and replace text in github file",
   "main": "dist/find-and-replace-in-github-file.js",
   "types": "dist/find-and-replace-in-github-file.d.ts",
   "bin": "dist/cli/find-and-replace-in-github-file.js",
@@ -16,11 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "library:build:clean": "fse remove dist && npm run library:build:dirty",
     "library:build:dirty": "ts-node --esm ./automation/library/build.ts",
-    "npm-pull": "npm-pull",
-    "npm-release": "npm-release",
-    "library:build:generate-package-class": "generate-package-class",
-    "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts",
-    "library:documentation:generate": "typedoc ./src/main.ts"
+    "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts"
   },
   "keywords": [
     "GitHub",
