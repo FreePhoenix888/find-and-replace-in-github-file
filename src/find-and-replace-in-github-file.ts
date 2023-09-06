@@ -10,7 +10,7 @@ const log = debug('find-and-replace-in-github-file');
  * #### Find and replace text in a file hosted on a GitHub repository
  * ```typescript
  * const octokit = new Octokit({ auth: "your-github-token" });
- * findAndReplaceInGithubFile({
+ * await findAndReplaceInGithubFile({
  *   octokit,
  *   owner: "username",
  *   repo: "repository",
