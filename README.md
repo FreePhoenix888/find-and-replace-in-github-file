@@ -6,5 +6,10 @@ Find and replace text in github file
 **[Documentation](https://freephoenix888.github.io/find-and-replace-in-github-file/)**
 
 # CLI
-<!-- CLI_USAGE_HELP_START -->
-<!-- CLI_USAGE_HELP_END -->
+## Usage
+<!-- CLI_HELP_START -->
+<!-- CLI_HELP_END -->
+
+## Usage ways
+<!-- CLI_USAGE_WAYS_START -->
+<!-- CLI_USAGE_WAYS_END -->
