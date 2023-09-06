@@ -26,24 +26,16 @@ const log = debug('find-and-replace-in-github-file');
 export async function findAndReplaceInGithubFile(options: FindAndReplaceInGithubFileOptions) {
   const { octokit, owner, repo, path, regex, replacement, commitMessage } = options;
   
-  const fileResponse = await octokit.repos.getContent({ owner, repo, path }).catch(error => {
-    log('Error:', error);
-    if (error.status === 404) {
-      return null;
-    }
-    throw error;
-  });
+  const fileResponse = await octokit.repos.getContent({ owner, repo, path })
 
   log('FileResponse:', fileResponse);
 
   if (fileResponse && Array.isArray(fileResponse.data)) {
-    log(`Skipped repo ${repo}, ${path} appears to be a directory`);
-    return;
+    throw new Error(`File ${path} appears to be a directory`);
   }
 
   if (!fileResponse || !('content' in fileResponse.data)) {
-    log(`Skipped repo ${repo}, ${path} not found`);
-    return;
+    throw new Error(`File ${path} not found`);
   }
 
   let content = Buffer.from(fileResponse.data.content, 'base64').toString('utf-8');
